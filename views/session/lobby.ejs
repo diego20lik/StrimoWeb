@@ -1,0 +1,79 @@
+<%- include("./nav.ejs") %>
+<div class="session-container">
+  <div class="lobby-content">
+    <div class="lobby-content-section purple">
+      <div class="token-balance">
+        <div class="token-logo">
+          <img src="/media/play.png" alt="" class="balance-token-logo" />
+        </div>
+        <div class="token-balance-title-text">
+          <h5><b>Token Balance</b></h5>
+          <p>0 STRM</p>
+        </div>
+      </div>
+      <h5><b>Your Contributions</b></h5>
+      <div class="contributions-grid">
+        <div class="currency-box">
+          <h5><b>0</b></h5>
+          <small>USD</small>
+        </div>
+        <div class="currency-box">
+          <h5><b>0</b></h5>
+          <small>USDT</small>
+        </div>
+        <div class="currency-box">
+          <h5><b>0</b></h5>
+          <small>BTC</small>
+        </div>
+      </div>
+    </div>
+    <div class="lobby-content-section">
+      <div class="token-info-title">
+        <h5><b>STRIMO TOKEN</b></h5>
+        <div class="running">
+          <small>RUNNING</small>
+        </div>
+      </div>
+      <div class="token-info-content">
+        <h3><b>1 STRMO = 1 USD</b></h3>
+        <small>1 USD = 0.000466 ETH</small>
+        <button class="main-button" onclick="location.href='/buy-token'">
+          Buy Token Now
+        </button>
+      </div>
+    </div>
+    <div class="lobby-content-section">
+      <h5><b>Your Account Status</b></h5>
+      <div class="account-info-buttons">
+        <div class="second-button">Email Verified</div>
+        <div class="main-button">Submit KYC</div>
+      </div>
+      <h5><b>Receiving Wallet</b></h5>
+      <div class="account-wallet-info">
+        <p>Add Your Wallet Address</p>
+        <a href="" class="main-link"><b>ADD</b></a>
+      </div>
+    </div>
+    <div class="lobby-content-section-lg">
+      <h3><b>Token Sales Progress</b></h3>
+      <div class="token-sales-info">
+        <p><b>RAISED AMMOUNT</b></p>
+        <p><b>TOTAL TOKEN</b></p>
+      </div>
+      <div class="token-sales-info">
+        <p>9,716,115 STRMO</p>
+        <p>10,000,000 STRMO</p>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="countdown">
+        <h3>Sale Ends In</h3>
+        <div id="demo"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/code.js"></script>
+<script type="text/javascript" src="js/navSm.js"></script>
+<script type="text/javascript" src="js/countdown.js"></script>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Strimo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" target="_blank" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" target="_blank" href="css/access.css" />
+    <link rel="stylesheet" target="_blank" href="css/style.css" />
+    <link rel="stylesheet" target="_blank" href="css/swap.css" />
+    <link rel="preconnect" target="_blank" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" target="_blank" href="css/nav.css" />
+    <link
+      target="_blank"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      target="_blank"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <meta
+      name="description"
+      content="Strimo is STREAMING, media, Live Events and NFT Gallery"
+    />
+    <link rel="shortcut icon" target="_blank" href="media/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <%- include("../load.ejs")%>
+    <div class="nav">
+      <a href="/home">
+        <img src="media/strimo-logow.png" alt="" class="logo" />
+      </a>
+    </div>
+    <div class="access-form-container">
+      <div class="access-form fade">
+        <div class="access-form-box-container">
+          <div class="access-form-box login">
+            <div class="loading-access"></div>
+            <div class="access-box-title">
+              <h1>Login</h1>
+              <hr />
+            </div>
+            <form class="access-form-element" id="login-form">
+              <div class="err-message"></div>
+              <div class="input-access-container">
+                <input
+                  type="email"
+                  name="emaillog"
+                  id="emaillog"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="input-access-container">
+                <input
+                  type="password"
+                  name="passwordlog"
+                  id="passwordlog"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <button
+                class="swap-submit-button btn-connect"
+                style="border-style: none"
+                type="submit"
+                id="btn-connect"
+              >
+                <h5><b>Log In</b></h5>
+              </button>
+              <p>
+                Don't have an account yet? Click
+                <a href="javascript:changeAccessForm('login')">Here!</a>
+              </p>
+            </form>
+          </div>
+          <div class="access-form-box register">
+            <div class="loading-access"></div>
+            <div class="access-box-title">
+              <h1>Register</h1>
+              <hr />
+            </div>
+            <form class="access-form-element" id="register-form">
+              <div class="err-message"></div>
+              <div class="input-access-container">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="input-access-container">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div class="input-access-container">
+                <input
+                  type="password"
+                  name="password"
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+              <button
+                class="swap-submit-button btn-connect"
+                style="border-style: none"
+                type="submit"
+                id="btn-connect"
+              >
+                <h5><b>Register</b></h5>
+              </button>
+              <p>
+                Already have an account? Click
+                <a href="javascript:changeAccessForm('register')">Here!</a>
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="image-access"></div>
+        <div class="wave-background"></div>
+      </div>
+    </div>
+  </body>
+  <%-include("../firebase.ejs")%>
+  <script type="text/javascript" src="js/load.js"></script>
+  <script type="text/javascript" src="js/code.js"></script>
+  <script type="text/javascript" src="js/access.js"></script>
+</html>

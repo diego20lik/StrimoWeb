@@ -1,0 +1,84 @@
+<%- include("./nav.ejs") %>
+<div class="session-container">
+  <div class="my-strmo-token-container">
+    <h1><b>BUY STRMO WITH BNB</b></h1>
+    <p>You can buy our STRMO token only with BNB</p>
+    <hr />
+    <h3><b>How much would you like to contribute?</b></h3>
+    <p>
+      Our Calculator will help you verify the amount of tokens to receive
+      according to their price
+    </p>
+    <div class="convertion">
+      <input type="number" class="input-token-container" placeholder="STRMO" />
+      <h1>=</h1>
+      <div class="convertion-usd">
+        <h5>0.0</h5>
+        <p>BNB</p>
+      </div>
+    </div>
+    <button class="main-button">BUY STRMO</button>
+  </div>
+  <div class="side-section">
+    <div class="add-wallet">Add your wallet address before you buy</div>
+    <div class="lobby-content-section purple">
+      <div class="token-balance">
+        <div class="token-logo">
+          <img src="/media/play.png" alt="" class="balance-token-logo" />
+        </div>
+        <div class="token-balance-title-text">
+          <h5><b>Token Balance</b></h5>
+          <p>0 STRM</p>
+        </div>
+      </div>
+      <h5><b>Your Contributions</b></h5>
+      <div class="contributions-grid">
+        <div class="currency-box">
+          <h5><b>0</b></h5>
+          <small>USD</small>
+        </div>
+        <div class="currency-box">
+          <h5><b>0</b></h5>
+          <small>USDT</small>
+        </div>
+        <div class="currency-box">
+          <h5><b>0</b></h5>
+          <small>BTC</small>
+        </div>
+      </div>
+    </div>
+    <div class="lobby-content-section">
+      <div class="token-info-title">
+        <h5><b>STRIMO TOKEN</b></h5>
+        <div class="running">
+          <small>RUNNING</small>
+        </div>
+      </div>
+      <div class="token-info-content">
+        <h3><b>1 STRMO = 1 USD</b></h3>
+        <small>1 USD = 0.000466 ETH</small>
+      </div>
+    </div>
+    <div class="lobby-content-section">
+      <h3><b>Token Sales Progress</b></h3>
+      <div class="token-sales-info">
+        <p><b>RAISED AMMOUNT</b></p>
+        <p><b>TOTAL TOKEN</b></p>
+      </div>
+      <div class="token-sales-info">
+        <p>9,716,115 STRMO</p>
+        <p>10,000,000 STRMO</p>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="countdown">
+        <h3>Sale Ends In</h3>
+        <div id="demo"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/code.js"></script>
+<script type="text/javascript" src="js/navSm.js"></script>
+<script type="text/javascript" src="js/countdown.js"></script>

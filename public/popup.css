@@ -1,0 +1,222 @@
+body {
+  --text-color: #222;
+  --bkg-color: #fff;
+  --button-color: #f3f3f3;
+  --swap-color: #fff;
+  --manage-color: blue;
+}
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #373737;
+  --button-color: #40444f;
+  --swap-color: #212429;
+  --manage-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --text-color: #eee;
+    --bkg-color: #373737;
+    --button-color: #f3f3f3;
+    --swap-color: #212429;
+    --manage-color: white;
+  }
+  body.light-theme {
+    --text-color: #222;
+    --bkg-color: #fff;
+    --button-color: #40444f;
+    --swap-color: #fff;
+    --manage-color: blue;
+  }
+}
+.show-popUp {
+  display: flex !important;
+}
+.overlay {
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  padding: 10px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 99;
+}
+.popup-tokens {
+  position: relative;
+  z-index: 99;
+  background-color: var(--bkg-color);
+  border-radius: 20px;
+  /* padding: 20px; */
+  padding-top: 0px;
+  width: fit-content;
+  /* overflow-y: auto; */
+  height: auto;
+  max-height: 100%;
+  width: 25%;
+}
+.pop-token-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pop-token-header>* {
+ margin: 0;
+}
+.buscar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 10px;
+  padding-top: 20px;
+  border-radius: 25px;
+  background-color: var(--bkg-color) !important;
+  top: 0px;
+  width: 100%;
+  color: var(--text-color);
+}
+.buscar .input {
+  width: 100%;
+  padding: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--button-color);
+  border-radius: 25px;
+  /* border-style: solid; */
+}
+.buscar .input input {
+  width: 100%;
+  border-color: transparent !important;
+  background-color: transparent;
+  color: var(--text-color);
+  /* background-color: #f3f3f3 !important; */
+  margin: 0px 3px;
+  font-family: "Montserrat", sans-serif !important;
+  border-radius: 5px;
+}
+.buscar .input input::placeholder {
+  font-family: "Montserrat", sans-serif !important;
+  margin: 0px;
+  color: var(--text-color);
+  /* font-size: 20px; */
+}
+.buscar .input:focus-within {
+  border-color: #81defe;
+}
+.popup-hr {
+  background-color: var(--button-color) !important;
+}
+.tokens {
+  width: 100%;
+  min-height: 30vh;
+  max-height: 60vh;
+  overflow-y: auto;
+  border-top: solid;
+  border-width: 1px;
+  border-color: var(--button-color);
+}
+.token {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--bkg-color);
+  color: var(--text-color);
+  height: 60px;
+  transition: all 0.5s;
+}
+.close-pop-up:hover {
+  background-color: var(--button-color);
+  cursor: pointer;
+}
+.token:hover {
+  background-color: var(--button-color);
+  cursor: pointer;
+}
+.token-img {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+.token-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.token-info {
+  display: flex;
+  flex-direction: column;
+}
+.token-info > * {
+  margin: 0px;
+}
+.token-info small {
+  color: grey;
+}
+.manage {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--swap-color);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  color: var(--manage-color);
+  padding: 10px;
+}
+.tokens::-webkit-scrollbar-track {
+  background-color: var(--bkg-color) !important;
+}
+.tokens::-webkit-scrollbar-thumb {
+  border-color: var(--bkg-color);
+}
+@media screen and (max-device-width: 500px) {
+  .popup-tokens {
+    position: relative;
+    z-index: 99;
+    background-color: var(--bkg-color);
+    border-radius: 20px;
+    /* padding: 20px; */
+    padding-top: 0px;
+    width: fit-content;
+    /* overflow-y: auto; */
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+  }
+}
+@media screen and (max-device-width: 720px) and (min-device-width: 501px) {
+  .popup-tokens {
+    position: relative;
+    z-index: 99;
+    background-color: var(--bkg-color);
+    border-radius: 20px;
+    /* padding: 20px; */
+    padding-top: 0px;
+    width: fit-content;
+    /* overflow-y: auto; */
+    height: auto;
+    max-height: 100%;
+    width: 50%;
+  }
+}
+@media screen and (max-device-width: 1024px) and (min-device-width: 721px) {
+  .popup-tokens {
+    position: relative;
+    z-index: 99;
+    background-color: var(--bkg-color);
+    border-radius: 20px;
+    /* padding: 20px; */
+    padding-top: 0px;
+    width: fit-content;
+    /* overflow-y: auto; */
+    height: auto;
+    max-height: 100%;
+    width: 45%;
+  }
+}

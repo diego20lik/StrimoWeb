@@ -1,0 +1,100 @@
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"
+  defer
+></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyDVZBpImImjl5NUPjOeTxoXvybRXrUP2to",
+    authDomain: "strimo-9e1a1.firebaseapp.com",
+    databaseURL: "https://strimo-9e1a1-default-rtdb.firebaseio.com",
+    projectId: "strimo-9e1a1",
+    storageBucket: "strimo-9e1a1.appspot.com",
+    messagingSenderId: "947032620004",
+    appId: "1:947032620004:web:3c571845061d83670da5f1",
+    measurementId: "G-MFM7MBW4B9",
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //Login
+  document.getElementById("login-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    $(".loading-access").show();
+    const email = $("#emaillog").val();
+    const password = $("#passwordlog").val();
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(({ user }) => {
+        return user.getIdToken().then((idToken) => {
+          const objectFetched = {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              "CSRF-Token": Cookies.get("XSRF-TOKEN"),
+            },
+            body: JSON.stringify({ idToken }),
+          };
+          return fetch("/sessionLogin", objectFetched);
+        });
+      })
+      .then(() => {
+        return firebase.auth().signOut();
+      })
+      .then(() => {
+        $(".loading-access").hide();
+        window.location.assign("/lobby");
+      })
+      .catch((err) => {
+        $(".loading-access").hide();
+        $(".err-message").html(`<small>${err}</small>`);
+      });
+    return false;
+  });
+
+  //SignUp
+
+  document
+    .getElementById("register-form")
+    .addEventListener("submit", (event) => {
+      $(".loading-access").show();
+      event.preventDefault();
+      if ($("#password").val() == $("#confirmPassword").val()) {
+        const email = $("#email").val();
+        const password = $("#password").val();
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(email, password)
+          .then(({ user }) => {
+            return user.getIdToken().then((idToken) => {
+              return fetch("/sessionLogin", {
+                method: "POST",
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                  "CSRF-Token": Cookies.get("XSRF-TOKEN"),
+                },
+                body: JSON.stringify({ idToken }),
+              });
+            });
+          })
+          .then(() => {
+            return firebase.auth().signOut();
+          })
+          .then(() => {
+            $(".loading-access").hide();
+            window.location.assign("/lobby");
+          })
+          .catch((err) => {
+            $(".loading-access").hide();
+            $(".err-message").html(`<small>${err}</small>`);
+          });
+        return false;
+      } else {
+        $(".loading-access").hide();
+        $(".err-message").html("Passwords do not match");
+      }
+    });
+</script>
