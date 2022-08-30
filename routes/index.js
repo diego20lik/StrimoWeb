@@ -24,7 +24,7 @@ router.get("/home", (req, res) => {
   res.render("../views/main.ejs");
 });
 router.get("/", (req, res) => {
-  res.render("../views/swap.ejs");
+  res.render("../views/main.ejs");
 });
 router.get("/download_white_paper", (req, res) => {
   var file = path.join(__dirname, "..", "whitepaper-pdf", "STRIMO WP.pdf");
